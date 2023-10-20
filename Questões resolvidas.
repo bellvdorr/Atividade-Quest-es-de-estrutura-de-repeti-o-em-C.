@@ -1,0 +1,196 @@
+1. Escreva um programa em C que recebe um número “n” do usuário e imprime todos os divisores de 5 no intervalo [1, n].
+
+
+#include<stdio.h>
+int main()
+{
+    int n;
+      printf("Digite um numero: "); //Pedir o número;
+      scanf("%i", &n);
+    for(int i = 1; i<=n; i++){ //Fazer a repetição, checando se é divisor de 5...
+      if(i % 5 == 0){
+        printf("%i\n", i); //..se for, imprime na tela.
+      }
+    }
+}
+
+2. Escreva um programa em C para calcular a soma de todos os números divisíveis por 9 em um determinado intervalo definido pelo usuário.
+
+    
+ #include<stdio.h>
+int main()
+{
+    int n, s=0;
+      printf("Digite um numero: "); //Pedir o número;
+      scanf("%i", &n);
+    for(int i = 1; i<=n; i++){ //Fazer a repetição, checando se é divisor de 9...
+      if(i % 9 == 0){ //... se for, somar.
+        s = s+i;
+      }
+    }
+    printf("Soma de todos os divisores de nove no intervalo do numero %i: %i", n, s);
+}
+
+3. Escreva um programa em C que testa se um número, n, é primo. O valor de n é fornecido pelo usuário.
+ 
+  
+ #include<stdio.h>
+int main()
+{
+    int n;
+    for(int i = 1; i<10 ; i++){//Fazer a repetição checando se o numero lido é primo...
+      printf("Digite um numero: "); //Pedir o número;
+      scanf("%i", &n);
+      if(n%2!=0){  //...se for, imprimir.
+        printf("%i\n", n);
+      }
+    }
+}
+
+4. Escreva um programa em C que recebe um número do usuário de 1000 até 9999, separe seus dígitos e informe seus nomes em português.
+
+#include<stdio.h>
+int main() {
+    int n, i, j, aux[1][3];
+    printf("Digite um numero entre '1000' e '9999': "); //Pedir o número;
+    scanf("%i", &n);
+    for(i=0;i<1;i++){ //Separo o numero em 4 unidades
+      for(j=0; j<4;j++){
+	      aux[i][j]= n % 10; //Guardo numa matriz, mas poderia ser num vetor.
+        n = n/10;
+      }
+    }
+    for(i=0; i<1; i++){ //Separar e representar seus devidos nomes.
+    	for(j=0; j<1; j++){
+    		if(aux[i][j] = aux[0][0]){
+    	switch(aux[i][j]){ // switch case para cada numero dentro da matriz, dependendo do numero ele vai receber um certo nome.
+      case 1:
+      printf("Unidade: 1(Um) ");
+      break;
+  		case 2:
+  	printf("Unidade: 2(Dois) ");
+  	break;	
+  		case 3:
+      printf("Unidade: 3(Tres) ");
+  	break;
+  		case 4:
+  	printf("Unidade: 4(Quatro) ");
+      break;	
+  		case 5:
+      printf("Unidade: 5(Cinco) ");
+  	break;
+  		case 6:
+  	printf("Unidade: 6(Seis) ");
+  	break;
+  		case 7:
+      printf("Unidade: 7(Sete) ");
+      break;	
+  		case 8:
+  	printf("Unidade: 8(Oito) ");
+  	break;
+  		case 9:
+      printf("Unidade: 9(Nove) ");
+      break;
+  	}
+  			}
+  			if(aux[i][j] = aux[0][1]){
+  			switch(aux[i][j]){
+      	case 1:
+      printf("Dezena: 10(Dez) ");
+      break;
+  		case 2:
+  	printf("Dezena: 20(Vinte) ");
+  	break;	
+  		case 3:
+      printf("Dezena: 30(Trinta) ");
+  	break;
+  		case 4:
+  	printf("Dezena: 40(Quarenta) ");
+      break;	
+  		case 5:
+      printf("Dezena: 50(Cinquenta) ");
+  	break;
+  		case 6:
+  	printf("Dezena: 60(Secenta) ");
+  	break;
+  		case 7:
+      printf("Dezena: 70(Setenta) ");
+      break;	
+  		case 8:
+  	printf("Dezena: 80(Oitenta) ");
+  	break;
+  		case 9:
+      printf("Dezena: 90(Noventa) ");
+      break;
+  	}
+  			}
+  			if(aux[i][j]=aux[0][2]){
+  				switch(aux[i][j]){
+      	case 1:
+      printf("Centena: 100(Cem) ");
+      break;
+  		case 2:
+  	printf("Centena: 200(Duzentos) ");
+  	break;	
+  		case 3:
+      printf("Centena: 300(Trezentos) ");
+  	break;
+  		case 4:
+  	printf("Centena: 400(Quatrocentos) ");
+      break;	
+  		case 5:
+      printf("Centena: 500(Quinhetos) ");
+  	break;
+  		case 6:
+  	printf("Centena: 600(Seiscentos) ");
+  	break;
+  		case 7:
+      printf("Centena: 700(Setecentos) ");
+      break;	
+  		case 8:
+  	printf("Centena: 800(Oitocentos) ");
+  	break;
+  		case 9:
+      printf("Centena: 900(Novecentos) ");
+      break;
+  	}
+  		}
+  			if(aux[i][j]=aux[0][3]){
+      switch(aux[i][j]){
+      	case 1:
+      printf("Milhar: 1000(Mil) ");
+      break;
+  		case 2:
+  	printf("Milhar: 2000(Dois Mil) ");
+  	break;	
+  		case 3:
+      printf("Milhar: 3000(Tres Mil) ");
+  	break;
+  		case 4:
+  	printf("Milhar: 4000(Quatro Mil) ");
+      break;	
+  		case 5:
+      printf("Milhar: 5000(Cinco Mil) ");
+  	break;
+  		case 6:
+  	printf("Milhar: 6000(Seis Mil) ");
+  	break;
+  		case 7:
+      printf("Milhar: 7000(Sete Mil) ");
+      break;	
+  		case 8:
+  	printf("Milhar: 8000(Oito Mil) ");
+  	break;
+  		case 9:
+      printf("Milhar: 9000(Nove Mil) ");
+      break;
+  	}
+  }
+  }
+  }
+
+}
+
+
+
+
